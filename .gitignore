@@ -130,4 +130,6 @@ dist
 .pnp.*
 
 # No js files
+src/**/*.d.ts
 src/**/*.js
+src/**/*.map
