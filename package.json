@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "build": "tsc",
-    "format": "prettier --write src/**/*.ts"
+    "format": "prettier --write src/**/*.ts",
+    "lint": "eslint src/**/*.ts --max-warnings=0 --report-unused-disable-directives"
   },
   "type": "module",
   "keywords": [],
