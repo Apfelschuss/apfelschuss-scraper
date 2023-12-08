@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
-    "module": "esnext"
+    "module": "esnext",
+    "target": "ES2021",
   }
 }
