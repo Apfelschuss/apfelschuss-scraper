@@ -1,6 +1,6 @@
-# Apfelschuss.io Scraping Bot integration
+# Apfelschuss.io ScrapingBot integration
 
-This project grabs likes, followers and posts from different social media sites with help of [scrapingbot](https://www.scraping-bot.io/dashboard/).
+This project grabs likes, followers and posts from different social media sites, that are listed on [apfelschuss.io](https://apfelschuss.io/), with help of [ScrapingBot](https://www.scraping-bot.io/dashboard/).
 
 # Run locally
 
