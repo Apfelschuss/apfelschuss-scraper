@@ -5,10 +5,10 @@
     "esModuleInterop": true,
     "outDir": "./dist",
     "skipLibCheck": true,
-    "module": "esnext",
+    "module": "commonjs",
     "sourceMap": true,
     "strict": true,
     "strictFunctionTypes": false,
-    "target": "ES2021",
+    "target": "ES5"
   }
 }
