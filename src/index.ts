@@ -10,8 +10,8 @@ const auth = 'Basic ' + Buffer.from(username + ':' + apiKey).toString('base64');
 scrapeSocialMedia({
   params: {
     auth,
-    scraper: 'tiktokProfile',
-    url: 'https://www.tiktok.com/@renteninitiative',
+    scraper: 'facebookOrganization',
+    url: 'https://www.facebook.com/stromfressergesetznein',
   },
 })
   .then((result) => {
