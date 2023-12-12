@@ -10,8 +10,8 @@ const auth = 'Basic ' + Buffer.from(username + ':' + apiKey).toString('base64');
 scrapeSocialMedia({
   params: {
     auth,
-    scraperType: 'linkedinCompanyProfile',
-    urlToScrap: 'https://linkedin.com/company/sintio',
+    scraper: 'linkedinCompanyProfile',
+    url: 'https://linkedin.com/company/sintio',
   },
 })
   .then((result) => {

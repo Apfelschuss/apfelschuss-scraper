@@ -4,8 +4,9 @@ import { sleep } from '../lib/helper';
 interface Props {
   params: {
     auth: string; // 'Basic ' + Buffer.from(username + ':' + apiKey).toString('base64');
-    scraperType: string; // 'linkedinCompanyProfile'
-    urlToScrap: string; // 'https://linkedin.com/company/sintio'
+    scraper: string; // 'linkedinCompanyProfile'
+    url?: string; // 'https://linkedin.com/company/sintio'
+    account?: string; // 'sintio'
   };
 }
 
@@ -18,13 +19,14 @@ interface FinalResponseData {
   message: string;
 }
 
-export async function scrapeSocialMedia({ params: { auth, scraperType, urlToScrap } }: Props) {
+export async function scrapeSocialMedia({ params: { auth, scraper, url, account } }: Props) {
   try {
     const response = await axios.post(
       'http://api.scraping-bot.io/scrape/data-scraper',
       {
-        scraper: scraperType,
-        url: urlToScrap,
+        scraper,
+        url,
+        account,
       },
       {
         headers: {
@@ -43,9 +45,10 @@ export async function scrapeSocialMedia({ params: { auth, scraperType, urlToScra
       await sleep(1000);
       const responseUrl =
         'http://api.scraping-bot.io/scrape/data-scraper-response?scraper=' +
-        scraperType +
+        scraper +
         '&responseId=' +
         scraperInit.responseId;
+      console.log('Response URL:', responseUrl);
       const finalResponse = await axios.get(responseUrl, {
         headers: {
           Accept: 'application/json',
@@ -53,6 +56,7 @@ export async function scrapeSocialMedia({ params: { auth, scraperType, urlToScra
         },
       });
       numOfTries++;
+      console.log('Tries:', numOfTries.toString());
       data = finalResponse.data as FinalResponseData;
     } while (data == null || data.status === 'pending');
 
