@@ -10,8 +10,8 @@ const auth = 'Basic ' + Buffer.from(username + ':' + apiKey).toString('base64');
 scrapeSocialMedia({
   params: {
     auth,
-    scraper: 'linkedinCompanyProfile',
-    url: 'https://linkedin.com/company/sintio',
+    scraper: 'tiktokProfile',
+    url: 'https://www.tiktok.com/@renteninitiative',
   },
 })
   .then((result) => {
